@@ -32,7 +32,7 @@ class SQLStorageAdapter(StorageAdapter):
         if not self.database_uri:
             self.database_uri = 'sqlite:///db.sqlite3'
 
-        self.engine = create_engine(self.database_uri, convert_unicode=True)
+        self.engine = create_engine(self.database_uri)
 
         if self.database_uri.startswith('sqlite://'):
             from sqlalchemy.engine import Engine
